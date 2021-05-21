@@ -11,20 +11,29 @@ Exemplo:
                 DIAGONAL = 6.4031
  */
 
+import java.util.Locale;
+import java.util.Scanner;
+
 public class CalculaRetangulo {
     public static void main(String[] args) {
 
+//configurango a entrada de dados para aceitar PONTO
+        Locale.setDefault(Locale.US);
+        Scanner scanner = new Scanner(System.in);
 
-        double base = 5.0;
-        double altura = 4.0;
+
+        System.out.println("Digire o valor da base");
+        double base = scanner.nextDouble();
+        System.out.println("digite o valor da altura");
+        double altura = scanner.nextDouble();
 
         double area = base * altura;
         double perimetro = 2 * base + 2 * altura;
         double diagonal = Math.sqrt(base * base + altura * altura);
 
-        System.out.println("AREA = " + area);
-        System.out.println("PERIMETRO = " + perimetro);
-        System.out.println("DIAGONAL = " + diagonal);
+        System.out.printf("AREA = %.4f%n " ,area);
+        System.out.printf("PERIMETRO = %.4f%n" , perimetro);
+        System.out.printf("DIAGONAL = %.4f%n ",  diagonal);
 
 
     }
